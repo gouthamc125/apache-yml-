@@ -1,0 +1,16 @@
+---
+- hosts: web
+  remote_user: goutham
+  become: yes
+  vars:
+    tomcat_version: 9.0.70
+    
+    tomcat_permissions_production: True
+    
+    tomcat_users:
+      - username: "admin"
+        password: "goutham24"
+        roles: "tomcat,admin,manager,manager-gui"
+  roles:
+    - role: tomcat
+
